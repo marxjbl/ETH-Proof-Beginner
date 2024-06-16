@@ -49,8 +49,8 @@ The `mint` function increases the total supply of tokens and the balance of a sp
 
 ```solidity
 function mint(address _address, uint _value) public {
-totalSupply += _value;
-balances[_address] += _value;
+    totalSupply += _value;              // increases the value by "_value"
+    balances[_address] += _value;       // increases the balance by "_value"
 }
 ```
 
@@ -58,9 +58,11 @@ balances[_address] += _value;
 The `burn` function decreases the total supply of tokens and the balance of a specified address, with a check to ensure the address has sufficient balance.
 
 ```solidity
-function mint(address _address, uint _value) public {
-totalSupply += _value;
-balances[_address] += _value;
+function burn (address _address, uint _value) public {
+    if (balances[_address] >= _value){  // to make sure that balance of account is greater than or equal to the amount that is supposd to be burned
+        totalSupply -= _value;          // decreases the value by "_value"
+        balances[_address] -= _value;   // decreases the value by "_value"
+    }
 }
 ```
 
