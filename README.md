@@ -43,19 +43,19 @@ The contract is written in Solidity version `0.8.18` and is licensed under the M
 
 The `mint` function increases the total supply of tokens and the balance of a specified address.
 
-solidity
+```solidity
 function mint(address _address, uint _value) public {
-    totalSupply += _value;
-    balances[_address] += _value;
+totalSupply += _value;
+balances[_address] += _value;
 }
+```
 
 ### Burn Function
 The `burn` function decreases the total supply of tokens and the balance of a specified address, with a check to ensure the address has sufficient balance.
 
-solidity
-function burn(address _address, uint _value) public {
-    if (balances[_address] >= _value) {
-        totalSupply -= _value;
-        balances[_address] -= _value;
-    }
+```solidity
+function mint(address _address, uint _value) public {
+totalSupply += _value;
+balances[_address] += _value;
 }
+```
