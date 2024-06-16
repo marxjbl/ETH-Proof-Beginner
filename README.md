@@ -1,7 +1,3 @@
-# ETH-Proof-Beginner
-
-# MyToken Smart Contract
-
 ## Overview
 
 **MyToken** is a simple Ethereum-based token implemented as a smart contract using Solidity. This contract demonstrates the fundamental concepts of token creation, minting, and burning on the Ethereum blockchain. 
@@ -50,17 +46,17 @@ function mint(address _address, uint _value) public {
     totalSupply += _value;
     balances[_address] += _value;
 }
-
-
+Burn Function
 The burn function decreases the total supply of tokens and the balance of a specified address, with a check to ensure the address has sufficient balance.
 
+solidity
+Copy code
 function burn(address _address, uint _value) public {
     if (balances[_address] >= _value) {
         totalSupply -= _value;
         balances[_address] -= _value;
     }
 }
-
 Usage
 To interact with this contract, you can use tools like Remix, Truffle, or any Ethereum development framework that supports Solidity. Below are the steps to deploy and interact with the contract using Remix:
 
